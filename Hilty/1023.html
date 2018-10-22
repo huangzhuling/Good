@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, img {margin:0;padding:0;border:0;list-style: none;}
+    .try{
+        width: 100%;
+        height: 315px;
+        background:darkslategray;
+        padding-top: 70px;
+    }
+
+    .try header{
+	width:555px;
+	height: 95px;
+	background:#fff;
+	border-radius: 48px;
+	margin:0 auto;
+	box-sizing:border-box;
+	padding:7px 0 0 35px;
+    }
+
+    
+    .try p{
+	margin-top: 10px;
+	text-align: center;
+    color: antiquewhite;
+    
+    }
+
+    .try ul{
+	margin:70px auto 0;
+	width: 960px;
+    }
+    .try ul li{
+    width:291px;
+	height:251px;
+	float: left;
+	margin-right:4%;
+	margin-bottom: 40px;
+	position: relative;
+	-webkit-perspective:230px;
+    }
+    
+    .try ul li:last-child{
+	margin-right: 0;
+    }   
+    .try ul li img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-backface-visibility: hidden;
+        transition: all 0.5s ease-in 0s;
+    }
+    .try ul li img.fanmian{
+        -webkit-transform: rotateX(-180deg);
+    }
+    .try ul li:hover img.fanmian{
+ 	-webkit-transform:rotateX(0deg);
+    }
+    .try ul li:hover img.zhengmian{
+ 	-webkit-transform:rotateX(180deg);
+    }  
+    .try ul li img{
+        width: 219px;
+        height: 251px;
+        padding-top: 20px;
+    } 
+    
+
+
+@media all and (min-width:40em){
+            /* 浮动布局 */
+            .flex-card-list li{
+                width: 50%;
+                list-style-type: none;
+            }
+            /*.no-flexbox*/ .flex-card-list li{
+                float: left;
+                list-style-type: none;
+            }
+        }
+        /* 将布局调整为每行3张卡 */
+        @media all and (min-width:40em) and (max-width:60em){
+            /* 清除每行2个项目的行 */
+             /*.no-flexbox*/ .flex-card-list li:nth-child(2n+1){
+                 clear: both;
+                 list-style-type: none;
+             }
+        }
+        @media all and (min-width:60em){
+            /* flex and non-flex共有的 */
+            .flex-card-list li{
+                width: 33.33%;
+                list-style-type: none;
+            }
+            /* 浮标：每第三项后清除 */
+             /*.no-flexbox*/  .flex-card-list li:nth-child(3n+1){
+                 clear: both;
+                 list-style-type: none;
+             }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="try">
+        <header>
+            <img src="./images/22.png" alt="">
+        </header>
+        <p>可爱的龙猫 自愈的龙猫 胖胖的龙猫</p>
+      <ul class="flex-card-list">
+          <li>
+            
+                <img class="zhengmian" src="./images/1.gif" alt="">
+                <img class="fanmian" src="./images/2.gif" alt="">
+            
+          </li>
+          <li>
+            
+                <img class="zhengmian" src="./images/3.gif" alt="">
+                <img class="fanmian" src="./images/4.gif" alt="">
+            
+          </li>
+          <li>
+              
+                  <img class="zhengmian" src="./images/5.gif" alt="">
+                  <img class="fanmian" src="./images/6.gif" alt="">
+              
+          </li>
+      </ul>
+    </div>
+    <br>
+    <a href="../index.html">返回上一层</a>
+</body>
+</html>
