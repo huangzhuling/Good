@@ -15,6 +15,9 @@
 var imagesA=document.getElementById("images").children;
 console.log(imagesA);
 
+
+//获取一组li文本
+
 // //行内样式实现更换显示样式
 // //26行元素隐藏
 // imagesA[0].style.display="none";
@@ -33,8 +36,10 @@ imagesA[4].className="displayImg"
 var currentNo=0;
 function changeImg(){
     //排除原理，先去掉同类
+    
     for(var i=0;i<imagesA.length;i++){
         imagesA[i].className="hiddenImg";
+        
     }
     //或者
     // for(const item of imagesA){
@@ -42,7 +47,8 @@ function changeImg(){
     // }
 
     //再突出自己
-     imagesA[currentNo].className="displayImg"
+     imagesA[currentNo].className="displayImg";
+    
 
      //换个元素，为下一次计时器调用做准备
      if(currentNo<7) {currentNo++;} 

@@ -28,12 +28,12 @@ ul{
 
 .arrow-left{
       left:20px;
-      background-image: url("../images/arrowL.png");  
+      background-image: url("images/arrowL.png");  
 }
 
 .arrow-right{ 	 
 	right:20px;	
-    background-image: url("../images/arrowR.png");   
+    background-image: url("images/arrowR.png");   
 }
 
 .pic{ 
@@ -104,18 +104,16 @@ ul{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 #images{
     position: relative;
 }
-
 #images>a{
     transition: opacity 1s linear;
+    /* display: block; */
     position: absolute;
     top: 0;
     left: 0;
 }
-
 .displayImg{
     /* display: block; */
     opacity: 1;
@@ -124,27 +122,24 @@ ul{
     /* display: none; */
     opacity: 0;
 }
-
 img{
     transition: opacity 1s linear;
     opacity: 1;
-
+    width: 100%;
+    height: 300px;
 }
-
 .slider{
     width: 1500px;
     height: 300px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
-.slider img{
-    display: block;
-}
 .btn{
     position: absolute;
-    top:50%;
-    width: 50px;
+    top: 50%;
+    width: 60px;
     height: 30px;
     background-color: #000;
     opacity: 0.3;
@@ -154,50 +149,58 @@ img{
     line-height: 30px;
     background-position: center;
 }
-.rightBtton{
+.rightButton{
     right: 20px;
 }
 .leftButton{
-    left: 23px;
+    left: 20px;
 }
-
-.shorten{
-    bottom: 0px;
+.txt-box{
+    width: 100%; 
     height: 5px;
-}
-.txtItems{
+    /* opacity: 0.5; */
+    /* background-color:#333;  */
     position: absolute;
-    z-index: 2;
     left: 0;
-    cursor: pointer;
-    color: #fff;
-    width: 100%;
-    overflow: hidden;
-    transition: height 0.25s linear;
+    bottom: 0;
+    display: flex;
+    z-index: 5;
+    transition: height 0.1s linear 0s;
 }
-ul{
-    list-style: none;
+.txt-box:hover{
+    height: 40px;
 }
-li{
-    text-align: center;
-    width: 11.45%;
-    height: 100px;
-    padding: 0.5%;
-    margin-right: 0.05%;
-    background-color: #000;
-    opacity: 0.5;
-    float: left;
-    transition: opacity 0.25s linear;
+.txtItem{
+           width: 12.5%;
+           margin-right:2px ;
+           color: #fff;
+           text-align: center;
 }
-
-li:hover,.heighlightColor{
-background-color:rgb(252, 164,2);
-
+.txtItem:hover,.heighlightColor{
+    background-color: rgba(252, 164, 2, 0.829);
+   
 }
-li:last-child{
+.txtItem：last-child{
     margin: 0;
 }
 .normalColor{
-    background-color: rgba(0,0,0,0.5)
+    background-color:rgba(0, 0,0, 0.5);
+}
+/* .zyx:hover{
+    background-color: green;
+    opacity: 1;
+
 }
 
+.currentTxt{
+    background-color: green;
+    opacity: 1;
+}
+
+
+.zyx span{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+}  */
