@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/shoppingCart.js"></script>
+    <script>
+        var p=new Product("01","鼠标",49.5,"01.jpg");
+    
+        var order=new Order(p,2,true);
+        var title=order.title;
+        // console.log(order.qty);
+        // console.log(order.price);
+        var cartData=new CartData();
+        cartData.orderList.push(order);
+        cartData.totalQty=order.qty;
+        cartData.totalAmount=order.qty*order.price;
+        cartData.units=1;
+        console.log(cartData); 
+
+
+        //创建购物车操作类对象
+        var cart=new ShoppingCart();
+        //将购物车数据写入本地储存
+        cart.setDataToLocalSatorge(cartData);
+        //将购物车数据读出来显示到控制台
+        console.log(cart.getDataFromLocalStorage());
+    </script>
+    <a href="../index.html">返回上一层</a>
+</body>
+</html>

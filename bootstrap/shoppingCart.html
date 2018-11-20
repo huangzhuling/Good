@@ -2,6 +2,32 @@
 <html lang="zh-cn">
 
 <head>
+
+    <!-- <script>
+        //将某个订单order，加入购物车
+        function addtoCart(order){
+        
+        var isOldProduct=false;//假设isOldProduct是假，代表当前状态是新商品
+        for(const i in myCart.orderList){
+          if(order.id==myCart.orderList[i].id){
+            isOldProduct=true;//新近订单的ID与购物车中某个商品的ID相等，是购物车中已经存在的商品
+            
+            myCart.orderList[i].qty+=order.qty;
+            break;
+            }
+        }
+        if(!isOldProduct){
+          
+          myCart.orderList.push(order);
+          myCart.units++;
+        }
+        
+        myCart.totalQt+=order.qty;
+        myCart.totalAmount+=order.price*order.qty;
+        }
+        
+        </script> -->
+
   <title>购物车</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
