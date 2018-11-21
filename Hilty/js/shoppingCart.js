@@ -57,7 +57,7 @@ class ShoppingCart{
         }
     }
     //将购物车数据写入本地
-    setDataToLocalSatorge(CartData){
+    setDataToLocalSatorge(cartData){
         //清除原有存储写入新列表
         localStorage.removeItem('lzzyCart');
         //写入本地存储
@@ -80,7 +80,62 @@ class ShoppingCart{
     setItemselectStatus(id,selectStatus){
 
     }
-    //加入购物车(写入)
+    //加入购物车(写入localStorage)
+    addToCart(order){
+        let cartData = this.getDataFromLocalStorage();
+        let orderList = cartData.orderList;
+        let isNewProduct = true;
+        for(let i=0;i<orderList.lenhth;i++) 
+        for(let i in orderList){
+            if(order.id==orderList[i].id){
+                orderList[i].qty +=order.qty;
+                isNewProduct=false;
+                break;
+            }
+        }
+        if(isNewProduct){
+            cartData.units++;
+            orderList.push(order);
+        }
+        cartData.totalAmount += order.qty* order.price;
+        cartData.totalQty += order.qty;
+        
+
+        this.setDataToLocalSatorge(cartData);
+     }
+    //清空购物车
+    clearCart(){
+        localStorage.removeItem('lzzyCart');
+    }
+     //选取商品的总数量
+
+     getSelectedQty() {
+        let cartData=this.getDataFromLocalStorage();
+        let orderList=cartData.orderList;
+        let selectedQty=0;
+        for (let i in orderList) {
+            if (orderList[i].selectStatus) {
+               selectedQty+=orderList[i].qty;
+            }
+        }
+        return selectedQty;
+    }
+    //选取商品的总价格
+
+    getSelectedAmount() {
+        let cartData=this.getDataFromLocalStorage();
+        let orderList=cartData.orderList;
+        let selectedAmount=0;
+        for(let i in orderList){
+            if(orderList[i].selectStatus){
+                
+                selectedAmount += orderList[i].qty * orderList[i].price;
+            }
+        }
+        return selectedAmount;
+
+        
+    }    
 }
 //   var order=new Order(p,2,true);
 
